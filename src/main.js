@@ -1,12 +1,10 @@
 import 'virtual:windi.css'
-import '@/assets/style/normal.less'
 import { createApp } from 'vue'
 import App from './App.vue'
-import VueRx from "@nopr3d/vue-next-rx/dist/vue-next-rx"
 import parseJson from 'json-parse-even-better-errors'
 import dayjs from 'dayjs'
 import 'dayjs/locale/zh-cn'
-import "ant-design-vue/dist/antd.less"
+import 'ant-design-vue/dist/antd.less'
 import message from 'ant-design-vue/es/message'
 import { SearchOutlined, CloseOutlined } from '@ant-design/icons-vue'
 import Layout from 'ant-design-vue/es/layout'
@@ -57,22 +55,52 @@ window.parseJson = parseJson.noExceptions
 
 let app = null
 
-  const { container } = props
-  app = createApp(App)
-  setupGlobDirectives(app)
-  router = routers
-  app.config.productionTip = false
+app = createApp(App)
+app.config.productionTip = false
 
-  app.config.globalProperties.$message = message
-  app.provide('message', message)
+app.config.globalProperties.$message = message
+app.provide('message', message)
 
-  app.config.globalProperties.dayjs = dayjs
+app.config.globalProperties.dayjs = dayjs
 
-  app.component('SearchOutlined', SearchOutlined)
-  app.component('CloseOutlined', CloseOutlined)
+app.component('SearchOutlined', SearchOutlined)
+app.component('CloseOutlined', CloseOutlined)
 
-  app.use(Layout).use(Button).use(Popover).use(Input).use(Select).use(DatePicker).use(ConfigProvider).use(Tabs).use(Tree).use(Alert)
-    .use(Dropdown).use(Tooltip).use(Menu).use(Pagination).use(Card).use(TreeSelect).use(List).use(Modal).use(Form).use(Divider).use(PopConfirm)
-    .use(Space).use(Table).use(Avatar).use(InputNumber).use(Cascader).use(Switch).use(Rate).use(PageHeader).use(Checkbox).use(Radio)
-    .use(Tag).use(Upload).use(Drawer).use(Breadcrumb)
-    .use(VXETable).use(VueRx).use(store).use(router).mount(container ? container.querySelector('#app') : '#app')
+app
+  .use(Layout)
+  .use(Button)
+  .use(Popover)
+  .use(Input)
+  .use(Select)
+  .use(DatePicker)
+  .use(ConfigProvider)
+  .use(Tabs)
+  .use(Tree)
+  .use(Alert)
+  .use(Dropdown)
+  .use(Tooltip)
+  .use(Menu)
+  .use(Pagination)
+  .use(Card)
+  .use(TreeSelect)
+  .use(List)
+  .use(Modal)
+  .use(Form)
+  .use(Divider)
+  .use(PopConfirm)
+  .use(Space)
+  .use(Table)
+  .use(Avatar)
+  .use(InputNumber)
+  .use(Cascader)
+  .use(Switch)
+  .use(Rate)
+  .use(PageHeader)
+  .use(Checkbox)
+  .use(Radio)
+  .use(Tag)
+  .use(Upload)
+  .use(Drawer)
+  .use(Breadcrumb)
+  .use(VXETable)
+  .mount('#app')

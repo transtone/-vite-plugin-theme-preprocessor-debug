@@ -5,15 +5,13 @@ import WindiCSS from 'vite-plugin-windicss'
 import ViteComponents from 'vite-plugin-components'
 import OptimizationPersist from 'vite-plugin-optimize-persist'
 import PkgConfig from 'vite-plugin-package-config'
-import path from "path"
-import { themePreprocessorPlugin, themePreprocessorHmrPlugin } from "@zougt/vite-plugin-theme-preprocessor";
+import path from 'path'
+import { themePreprocessorPlugin, themePreprocessorHmrPlugin } from '@zougt/vite-plugin-theme-preprocessor'
 
-const { prefix } = require('./package')
 const themeVars = require('./src/assets/style/theme.json')
-import qiankun from 'vite-plugin-qiankun'
 
 export default defineConfig({
-  base: `/pc-${prefix}/`,
+  base: '/',
   plugins: [
     vue(),
     Pages({ replaceSquareBrackets: true, nuxtStyle: true }),
@@ -21,7 +19,6 @@ export default defineConfig({
     PkgConfig(),
     OptimizationPersist(),
     WindiCSS(),
-    qiankun(prefix, { useDevMode: true }),
     themePreprocessorPlugin({
       less: {
         // 启用任意主题色模式
@@ -30,18 +27,18 @@ export default defineConfig({
         // defaultPrimaryColor: "#512da7",
         multipleScopeVars: [
           {
-            scopeName: "theme-default",
-            path: path.resolve("src/assets/theme/default.less"),
+            scopeName: 'theme-default',
+            path: path.resolve('src/assets/theme/default.less'),
           },
           {
-            scopeName: "theme-dark",
-            path: path.resolve("src/assets/theme/dark.less"),
+            scopeName: 'theme-dark',
+            path: path.resolve('src/assets/theme/dark.less'),
           },
         ],
         // css中不是由主题色变量生成的颜色，也让它抽取到主题css内，可以提高权重
         includeStyleWithColors: [
           {
-            color: "#ffffff",
+            color: '#ffffff',
             // 此类颜色的是否跟随主题色梯度变化，默认false
             // inGradient: true,
           },
@@ -51,9 +48,7 @@ export default defineConfig({
     themePreprocessorHmrPlugin(),
   ],
   resolve: {
-    alias: [
-      { find: /^@\//, replacement: '/src/' },
-    ],
+    alias: [{ find: /^@\//, replacement: '/src/' }],
   },
   server: {
     host: true,
