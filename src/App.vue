@@ -24,19 +24,17 @@
 <script setup>
 import zhCN from 'ant-design-vue/es/locale/zh_CN'
 import { ref, computed, onMounted, nextTick, watch, inject, } from 'vue'
+import { toggleTheme } from "@zougt/vite-plugin-theme-preprocessor/dist/browser-utils"
 
-const toggleTheme = (scopeName = "theme-default") => {
-  document.documentElement.className = scopeName
-}
 
 const currTheme = ref('theme-default')
 
 const handleToggleTheme = () => {
   if (currTheme.value === 'theme-default') {
-    toggleTheme('theme-dark')
+    toggleTheme({ scopeName: 'theme-dark' })
     currTheme.value = 'theme-dark'
   } else {
-    toggleTheme('theme-default')
+    toggleTheme({ scopeName: 'theme-default' })
     currTheme.value = 'theme-default'
   }
 }
