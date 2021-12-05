@@ -1,0 +1,12 @@
+{
+  "primary-color": "#1890FF",
+  "success-color": "#4ECB73",
+  "warning-color": "#FAD337",
+  "error-color": "#F2637B",
+  "info-color": "#5BC0DE",
+  "link-color": "#0072C9",
+  "font-size-base": "12px",
+  "input-height-base": "28px",
+  "input-height-sm": "23px",
+  "btn-height-base": "28px"
+}

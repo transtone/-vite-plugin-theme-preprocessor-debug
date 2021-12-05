@@ -1,0 +1,64 @@
+{
+  "defaultSeverity": "warning",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**"
+    ]
+  },
+  "rules": {
+    "quotemark": [
+      false
+    ],
+    "comment-format": [
+      false
+    ],
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
+    "class-name": false,
+    "variable-name": false,
+    "space-before-function-paren": false,
+    "import-spacing": false,
+    "no-floating-promises": false,
+    "no-empty": false,
+    "no-var-requires": false,
+    "curly": false,
+    "trailing-comma": false,
+    "semicolon": false,
+    "interface-name": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": [
+      false
+    ],
+    "no-unused-variable": false,
+    "no-console": [
+      false
+    ],
+    "no-bitwise": false,
+    "no-shadowed-variable": false,
+    "await-promise": false,
+    "deprecation": false,
+    "no-unnecessary-qualifier": false,
+    "no-unnecessary-type-assertion": false,
+    "no-string-literal": false,
+    "strict-type-predicates": false,
+    "no-consecutive-blank-lines": false
+  },
+  "jsRules": {
+    "semicolon": false,
+    "object-literal-sort-keys": false,
+    "curly": false,
+    "no-string-literal": false,
+    "no-unused-expression": false,
+    "no-shadowed-variable": false,
+    "no-bitwise": false,
+    "no-empty": false,
+    "variable-name": false,
+    "no-console": false
+  }
+}

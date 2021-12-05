@@ -1,0 +1,11 @@
+{
+  "printWidth": 120, 
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "quoteProps": "as-needed",
+  "proseWrap": "preserve",
+  "jsxSingleQuote": false,
+  "jsxBracketSameLine": true,
+  "htmlWhitespaceSensitivity": "ignore"
+}
